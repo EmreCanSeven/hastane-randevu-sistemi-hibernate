@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- SQL Dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Database Connection Settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hrs</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">mysql1071</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- Specifying Session Context -->
+		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
+
+		<!-- Mapping With Model Class Containing Annotations -->
+		<mapping package="model" />
+		<mapping class="model.Doktor" />
+		
+		<mapping class="model.Hasta" />
+		<mapping class="model.Hastahane" />
+		<mapping class="model.Poliklinik" />
+		<mapping class="model.Randevu" />
+		<mapping class="model.Sehir" />
+		<mapping class="model.Sekreter" />
+		<mapping class="model.User" />
+		
+
+	</session-factory>
+</hibernate-configuration>
