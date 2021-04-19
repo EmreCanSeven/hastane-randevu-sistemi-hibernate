@@ -17,7 +17,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private JFrame frame2;
+	private JFrame frame;
 
 	public ArayuzAdmin() {
 		initialize();
@@ -30,16 +30,16 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		Toolkit toolkit = Toolkit.getDefaultToolkit();  
 		Dimension screenSize = toolkit.getScreenSize();
 
-		frame2 = new JFrame();
-		frame2.setBounds(100, 100, 875, 875);
-		frame2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		frame2.setTitle("Admin Sayfasi");
-		frame2.getContentPane().setLayout(null);
+		frame = new JFrame();
+		frame.setBounds(100, 100, 875, 875);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setTitle("Admin Sayfasi");
+		frame.getContentPane().setLayout(null);
 
-		int x =(screenSize.width - frame2.getWidth()) / 2;
-		int y =(screenSize.height - frame2.getHeight()) / 2;
+		int x =(screenSize.width - frame.getWidth()) / 2;
+		int y =(screenSize.height - frame.getHeight()) / 2;
 
-		frame2.setLocation(x, y);
+		frame.setLocation(x, y);
 
 
 		JButton btnDoktorKayit = new JButton(" Doktor Kayit ");
@@ -65,7 +65,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnDoktorKayit.setBounds(50, 50, 125, 50);
-		frame2.getContentPane().add(btnDoktorKayit);
+		frame.getContentPane().add(btnDoktorKayit);
 		
 		
 		
@@ -124,7 +124,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnDoktorListele.setBounds(340, 50, 125, 50);
-		frame2.getContentPane().add(btnDoktorListele);
+		frame.getContentPane().add(btnDoktorListele);
 		
 		
 		
@@ -151,7 +151,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnHastaKayit.setBounds(50, 120, 125, 50);
-		frame2.getContentPane().add(btnHastaKayit);
+		frame.getContentPane().add(btnHastaKayit);
 		
 		
 		
@@ -214,7 +214,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnHastaListele.setBounds(340, 120, 125, 50);
-		frame2.getContentPane().add(btnHastaListele);
+		frame.getContentPane().add(btnHastaListele);
 		
 		
 		
@@ -241,7 +241,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnSekreterKayit.setBounds(50, 190, 125, 50);
-		frame2.getContentPane().add(btnSekreterKayit);
+		frame.getContentPane().add(btnSekreterKayit);
 		
 		
 		
@@ -304,7 +304,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnSekreterListele.setBounds(340, 190, 125, 50);
-		frame2.getContentPane().add(btnSekreterListele);
+		frame.getContentPane().add(btnSekreterListele);
 		
 		
 		
@@ -318,7 +318,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 							ArayuzRandevuKayit theWindow = new ArayuzRandevuKayit();
 							theWindow.getFrame().setVisible(true);
 
-							frame2.setVisible(false);
+							frame.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -331,7 +331,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnRandevuKayit.setBounds(50, 260, 125, 50);
-		frame2.getContentPane().add(btnRandevuKayit);
+		frame.getContentPane().add(btnRandevuKayit);
 		
 		
 		
@@ -394,7 +394,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnRandevuListele.setBounds(340, 260, 125, 50);
-		frame2.getContentPane().add(btnRandevuListele);
+		frame.getContentPane().add(btnRandevuListele);
 		
 		
 		
@@ -421,7 +421,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnHastahaneKayit.setBounds(50, 330, 125, 50);
-		frame2.getContentPane().add(btnHastahaneKayit);
+		frame.getContentPane().add(btnHastahaneKayit);
 		
 		
 		
@@ -484,7 +484,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnHastahaneListele.setBounds(340, 330, 125, 50);
-		frame2.getContentPane().add(btnHastahaneListele);
+		frame.getContentPane().add(btnHastahaneListele);
 		
 		
 		
@@ -511,7 +511,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnSehirKayit.setBounds(50, 400, 125, 50);
-		frame2.getContentPane().add(btnSehirKayit);
+		frame.getContentPane().add(btnSehirKayit);
 		
 		
 		
@@ -574,7 +574,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnSehirListele.setBounds(340, 400, 125, 50);
-		frame2.getContentPane().add(btnSehirListele);
+		frame.getContentPane().add(btnSehirListele);
 		
 		
 		
@@ -601,7 +601,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnPoliklinikKayit.setBounds(50, 470, 125, 50);
-		frame2.getContentPane().add(btnPoliklinikKayit);
+		frame.getContentPane().add(btnPoliklinikKayit);
 
 		
 		
@@ -664,7 +664,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		});
 
 		btnPoliklinikListele.setBounds(340, 470, 125, 50);
-		frame2.getContentPane().add(btnPoliklinikListele);
+		frame.getContentPane().add(btnPoliklinikListele);
 		
 		
 		
@@ -672,16 +672,16 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		btnKapat.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				frame2.dispose();
+				frame.dispose();
 
 			}
 
 		});
 
 		btnKapat.setBounds(195, 540, 125, 50);
-		frame2.getContentPane().add(btnKapat);
+		frame.getContentPane().add(btnKapat);
 
-		frame2.setVisible(true);
+		frame.setVisible(true);
 		pack();
 	}
 
@@ -689,11 +689,11 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 
 
 	public JFrame getFrame() {
-		return frame2;
+		return frame;
 	}
 
 	public void setFrame(JFrame frame2) {
-		this.frame2 = frame2;
+		this.frame = frame2;
 	}
 
 
