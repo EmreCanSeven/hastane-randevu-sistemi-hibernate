@@ -1,4 +1,4 @@
-package main;
+package util;
 
 import java.awt.FlowLayout;
 import java.awt.event.ItemEvent;

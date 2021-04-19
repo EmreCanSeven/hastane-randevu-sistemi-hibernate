@@ -18,20 +18,18 @@ import impl.HastaDaoImpl;
 import impl.HastahaneDaoImpl;
 import impl.PoliklinikDaoImpl;
 import impl.RandevuDaoImpl;
-import main.DatePicker;
 import model.Doktor;
 import model.Hasta;
 import model.Hastahane;
 import model.Poliklinik;
 import model.Randevu;
+import util.DatePicker;
 
 public class ArayuzRandevuKayit extends javax.swing.JFrame{
 
 
 
 	private static final long serialVersionUID = 1L;
-	private JTextField txtRandevuTarihi;
-	private JTextField txtPolikinlik;
 	private JLabel lblRandevuTarihi;
 	private JButton buttonDatePicker;
 	private JTextField textDatePicker;
@@ -87,7 +85,7 @@ public class ArayuzRandevuKayit extends javax.swing.JFrame{
 		lblPolikinlik.setBounds(10, 60, 107, 36);
 		frame12.getContentPane().add(lblPolikinlik);
 
-		//		String country2[]={"Dahiliye","Nöroloji","Kalp-Damar","Radyoloji"};
+		//		String country2[]={"Dahiliye","Nï¿½roloji","Kalp-Damar","Radyoloji"};
 
 		PoliklinikDaoImpl poliklinikDaoImpl = new PoliklinikDaoImpl();
 		List<Poliklinik> geriDonenPoliList = poliklinikDaoImpl.findAll();
@@ -119,7 +117,7 @@ public class ArayuzRandevuKayit extends javax.swing.JFrame{
 		DoktorDaoImpl doktorDaoImpl = new DoktorDaoImpl();
 		List<Doktor> geriDonenButunList = doktorDaoImpl.findAll();
 
-		//		String country3[]={"Emre Can Seven","Cihan Adil Seven","Burcu Seven","Aydýn Seven","Nahide Seven"};       
+		//		String country3[]={"Emre Can Seven","Cihan Adil Seven","Burcu Seven","Aydï¿½n Seven","Nahide Seven"};       
 		int i2=0;
 		
 		String[] array = new String[geriDonenButunList.size()];
@@ -147,7 +145,7 @@ public class ArayuzRandevuKayit extends javax.swing.JFrame{
 		HastahaneDaoImpl hastahaneDaoImpl = new HastahaneDaoImpl();
 		List<Hastahane> geriDonenHastahaneList = hastahaneDaoImpl.findAll();
 
-		//		String country3[]={"Emre Can Seven","Cihan Adil Seven","Burcu Seven","Aydýn Seven","Nahide Seven"};       
+		//		String country3[]={"Emre Can Seven","Cihan Adil Seven","Burcu Seven","Aydï¿½n Seven","Nahide Seven"};       
 		int i4=0;
 
 		String[] arrayHastahane = new String[geriDonenHastahaneList.size()];
@@ -218,7 +216,7 @@ public class ArayuzRandevuKayit extends javax.swing.JFrame{
 				
 				
 				// 1-emre seven
-				// 2-cihan saygý
+				// 2-cihan saygï¿½
 				// 3-bilal haktan
 				// 4-ebru kel
 				

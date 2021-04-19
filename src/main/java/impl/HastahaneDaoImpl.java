@@ -11,16 +11,16 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import dao.HastahaneDao;
-import main.DbOperations;
 import model.Doktor;
 import model.Hastahane;
 import model.Sehir;
+import util.SessionHelper;
 
 public class HastahaneDaoImpl implements HastahaneDao{
 
 	public void save(Hastahane hastahane) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -35,7 +35,7 @@ public class HastahaneDaoImpl implements HastahaneDao{
 
 	public void delete(Hastahane hastahane) {
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -50,7 +50,7 @@ public class HastahaneDaoImpl implements HastahaneDao{
 
 	public void update(Hastahane hastahane) {
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -68,7 +68,7 @@ public class HastahaneDaoImpl implements HastahaneDao{
 		
 		Hastahane hastahane = new Hastahane();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -88,7 +88,7 @@ public class HastahaneDaoImpl implements HastahaneDao{
 		
 		Hastahane hastahane = new Hastahane();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -104,7 +104,7 @@ public class HastahaneDaoImpl implements HastahaneDao{
 
 	public List<Hastahane> findAll() {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -121,7 +121,7 @@ public class HastahaneDaoImpl implements HastahaneDao{
 		
 		List<Hastahane> geriDonenHastahaneList = new ArrayList<Hastahane>();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 

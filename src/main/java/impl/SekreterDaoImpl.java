@@ -10,15 +10,15 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import dao.SekreterDao;
-import main.DbOperations;
 import model.Doktor;
 import model.Sekreter;
+import util.SessionHelper;
 
 public class SekreterDaoImpl implements SekreterDao{
 
 	public void save(Sekreter sekreter) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -33,7 +33,7 @@ public class SekreterDaoImpl implements SekreterDao{
 
 	public void delete(Sekreter sekreter) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -49,7 +49,7 @@ public class SekreterDaoImpl implements SekreterDao{
 
 	public void update(Sekreter sekreter) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -68,7 +68,7 @@ public class SekreterDaoImpl implements SekreterDao{
 		
 		Sekreter sekreter = new Sekreter();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -94,7 +94,7 @@ public class SekreterDaoImpl implements SekreterDao{
 
 	public List<Sekreter> findAll() {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		

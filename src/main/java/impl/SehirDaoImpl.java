@@ -10,15 +10,15 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import dao.SehirDao;
-import main.DbOperations;
 import model.Doktor;
 import model.Sehir;
+import util.SessionHelper;
 
 public class SehirDaoImpl implements SehirDao{
 
 	public void save(Sehir sehir) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -34,7 +34,7 @@ public class SehirDaoImpl implements SehirDao{
 
 	public void delete(Sehir sehir) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -49,7 +49,7 @@ public class SehirDaoImpl implements SehirDao{
 
 	public void update(Sehir sehir) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -67,7 +67,7 @@ public class SehirDaoImpl implements SehirDao{
 		
 		Sehir sehir = new Sehir();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -90,7 +90,7 @@ public class SehirDaoImpl implements SehirDao{
 
 	public List<Sehir> findAll() {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -105,7 +105,7 @@ public class SehirDaoImpl implements SehirDao{
 		
 		Sehir sehir = new Sehir();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 

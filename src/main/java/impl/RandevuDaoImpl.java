@@ -8,15 +8,15 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import dao.RandevuDao;
-import main.DbOperations;
 import model.Doktor;
 import model.Randevu;
+import util.SessionHelper;
 
 public class RandevuDaoImpl implements RandevuDao{
 
 	public void save(Randevu randevu) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -46,7 +46,7 @@ public class RandevuDaoImpl implements RandevuDao{
 	
 	public List<Randevu> findAll() {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		

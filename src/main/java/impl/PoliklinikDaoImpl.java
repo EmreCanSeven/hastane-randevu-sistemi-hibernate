@@ -10,14 +10,14 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import dao.PoliklinikDao;
-import main.DbOperations;
 import model.Poliklinik;
+import util.SessionHelper;
 
 public class PoliklinikDaoImpl implements PoliklinikDao{
 
 	public void save(Poliklinik poliklinik) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -46,7 +46,7 @@ public class PoliklinikDaoImpl implements PoliklinikDao{
 	
 	public List<Poliklinik> findAll() {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -62,7 +62,7 @@ public class PoliklinikDaoImpl implements PoliklinikDao{
 		
 		Poliklinik poliklinik = new Poliklinik();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 

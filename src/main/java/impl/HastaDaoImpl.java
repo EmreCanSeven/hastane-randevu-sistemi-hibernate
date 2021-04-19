@@ -10,15 +10,15 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import dao.HastaDao;
-import main.DbOperations;
 import model.Hasta;
+import util.SessionHelper;
 
 public class HastaDaoImpl implements HastaDao{
 
 	public void save(Hasta hasta) {
 		
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -38,7 +38,7 @@ public class HastaDaoImpl implements HastaDao{
 
 	public void update(Hasta hasta) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -55,7 +55,7 @@ public class HastaDaoImpl implements HastaDao{
 		
 		Hasta hasta = new Hasta();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -71,7 +71,7 @@ public class HastaDaoImpl implements HastaDao{
 
 	public List<Hasta> findAll(){
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -87,7 +87,7 @@ public class HastaDaoImpl implements HastaDao{
 		
 		Hasta hasta = new Hasta();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 

@@ -11,14 +11,14 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import dao.DoktorDao;
-import main.DbOperations;
 import model.Doktor;
+import util.SessionHelper;
 
 public class DoktorDaoImpl implements DoktorDao{
 
 	public void save(Doktor doktor) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -34,7 +34,7 @@ public class DoktorDaoImpl implements DoktorDao{
 
 	public void delete(Doktor doktor) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -49,7 +49,7 @@ public class DoktorDaoImpl implements DoktorDao{
 
 	public void update(Doktor doktor) {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -67,7 +67,7 @@ public class DoktorDaoImpl implements DoktorDao{
 		
 		Doktor doktor = new Doktor();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
@@ -89,7 +89,7 @@ public class DoktorDaoImpl implements DoktorDao{
 
 	public List<Doktor> findAll() {
 		
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -105,7 +105,7 @@ public class DoktorDaoImpl implements DoktorDao{
 		
 		Doktor doktor = new Doktor();
 
-		SessionFactory sessionFactory = DbOperations.getSessionFactory();
+		SessionFactory sessionFactory = SessionHelper.getSessionFactory();
 		Session session = sessionFactory.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 
