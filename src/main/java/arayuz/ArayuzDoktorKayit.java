@@ -7,8 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -34,12 +32,10 @@ public class ArayuzDoktorKayit extends javax.swing.JFrame{
 	private JTextField txtTCKimlikNo;
 	private JTextField txtAdi;
 	private JTextField txtSoyadi;
-	private JTextField txtCinsiyeti;
 	private JTextField txtDogumYeri;
 	private JTextField txtDogumTarihi;
 	private JTextField txtCepTelefonu;
 	private JTextField txtEPosta;
-	private JTextField txtPolikinlik;
 	private JFrame frame3;
 	
 	
@@ -99,7 +95,7 @@ public class ArayuzDoktorKayit extends javax.swing.JFrame{
 		lblCinsiyeti.setBounds(10, 160, 107, 36);
 		frame3.getContentPane().add(lblCinsiyeti);
 		
-		// TODO : cinsiyet dropdown ý eklenecek.. enum seklinde.!!!
+		// TODO : cinsiyet dropdown ï¿½ eklenecek.. enum seklinde.!!!
 		
 //		String country[]={"ERKEK","KADIN"};        
 	    final JComboBox<Cinsiyet> comboBoxCinsiyet=new JComboBox<Cinsiyet>();
@@ -161,8 +157,8 @@ public class ArayuzDoktorKayit extends javax.swing.JFrame{
 		lblPolikinlik.setBounds(10, 410, 107, 36);
 		frame3.getContentPane().add(lblPolikinlik);
 	
-		// ==> burada hangi veti tipi ile dolduryorsam aþðaýda getselecteditem dediðimde de o veri tipini döner. Enum olarak doldurursam getselectedTem dediðimde enum döner
-		//obje olarak bir sýnýf tipi olarak doldurusam bu seferde sýnýf tipinde döner..
+		// ==> burada hangi veti tipi ile dolduryorsam aï¿½ï¿½aï¿½da getselecteditem dediï¿½imde de o veri tipini dï¿½ner. Enum olarak doldurursam getselectedTem dediï¿½imde enum dï¿½ner
+		//obje olarak bir sï¿½nï¿½f tipi olarak doldurusam bu seferde sï¿½nï¿½f tipinde dï¿½ner..
 		PoliklinikDaoImpl poliklinikDaoImpl = new PoliklinikDaoImpl();
 		List<Poliklinik> geriDonenPoliList = poliklinikDaoImpl.findAll();
 
@@ -213,7 +209,6 @@ public class ArayuzDoktorKayit extends javax.swing.JFrame{
 				doktor.setSoyadi(txtSoyadi.getText());
 				doktor.setTckn(txtTCKimlikNo.getText());
 				
-				SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 				Date dateCreate = new Date(System.currentTimeMillis());
 				doktor.setCreatedAt(dateCreate);
 				
