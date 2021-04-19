@@ -9,8 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-
-public class ArayuzAdmin extends javax.swing.JFrame{
+public class ArayuzAdmin extends javax.swing.JFrame {
 
 	/**
 	 * 
@@ -24,10 +23,9 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 
 	}
 
-
 	public void initialize() {
 
-		Toolkit toolkit = Toolkit.getDefaultToolkit();  
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = toolkit.getScreenSize();
 
 		frame = new JFrame();
@@ -36,11 +34,10 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		frame.setTitle("Admin Sayfasi");
 		frame.getContentPane().setLayout(null);
 
-		int x =(screenSize.width - frame.getWidth()) / 2;
-		int y =(screenSize.height - frame.getHeight()) / 2;
+		int x = (screenSize.width - frame.getWidth()) / 2;
+		int y = (screenSize.height - frame.getHeight()) / 2;
 
 		frame.setLocation(x, y);
-
 
 		JButton btnDoktorKayit = new JButton(" Doktor Kayit ");
 		btnDoktorKayit.addActionListener(new ActionListener() {
@@ -59,16 +56,13 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 					}
 				});
 
-
 			}
 
 		});
 
 		btnDoktorKayit.setBounds(50, 50, 125, 50);
 		frame.getContentPane().add(btnDoktorKayit);
-		
-		
-		
+
 //		JButton btnDoktorDuzenleme = new JButton(" Doktor Duzenle ");
 //		btnDoktorDuzenleme.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent arg0) {
@@ -93,9 +87,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //
 //		btnDoktorDuzenleme.setBounds(195, 50, 125, 50);
 //		frame2.getContentPane().add(btnDoktorDuzenleme);
-		
-		
-		
+
 		JButton btnDoktorListele = new JButton(" Doktor Listele ");
 		btnDoktorListele.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -112,12 +104,12 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //						}
 //					}
 //				});
-				
+
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 
 						new ArayuzDoktorListeleme2().getMainFrame().setVisible(true);
-						 
+
 					}
 				});
 			}
@@ -125,9 +117,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 
 		btnDoktorListele.setBounds(340, 50, 125, 50);
 		frame.getContentPane().add(btnDoktorListele);
-		
-		
-		
+
 		JButton btnHastaKayit = new JButton(" Hasta Kayit ");
 		btnHastaKayit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -145,16 +135,13 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 					}
 				});
 
-
 			}
 
 		});
 
 		btnHastaKayit.setBounds(50, 120, 125, 50);
 		frame.getContentPane().add(btnHastaKayit);
-		
-		
-		
+
 //		JButton btnHastaDuzenleme = new JButton(" Hasta Duzenleme ");
 //		btnHastaDuzenleme.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent arg0) {
@@ -180,8 +167,6 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //		btnHastaDuzenleme.setBounds(195, 120, 125, 50);
 //		frame2.getContentPane().add(btnHastaDuzenleme);
 
-		
-		
 		JButton btnHastaListele = new JButton(" Hasta Listele ");
 		btnHastaListele.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -198,16 +183,14 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //						}
 //					}
 //				});
-				
+
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
-						
+
 						new ArayuzHastaListeleme().setVisible(true);
-						 
-							
+
 					}
 				});
-
 
 			}
 
@@ -215,9 +198,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 
 		btnHastaListele.setBounds(340, 120, 125, 50);
 		frame.getContentPane().add(btnHastaListele);
-		
-		
-		
+
 		JButton btnSekreterKayit = new JButton(" Sekreter Kayit ");
 		btnSekreterKayit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -235,16 +216,13 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 					}
 				});
 
-
 			}
 
 		});
 
 		btnSekreterKayit.setBounds(50, 190, 125, 50);
 		frame.getContentPane().add(btnSekreterKayit);
-		
-		
-		
+
 //		JButton btnSekreterDuzenleme = new JButton(" Sekreter Duzenleme ");
 //		btnSekreterDuzenleme.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent arg0) {
@@ -269,9 +247,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //
 //		btnSekreterDuzenleme.setBounds(195, 190, 125, 50);
 //		frame2.getContentPane().add(btnSekreterDuzenleme);
-		
-		
-		
+
 		JButton btnSekreterListele = new JButton(" Sekreter Listele ");
 		btnSekreterListele.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -288,16 +264,14 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //						}
 //					}
 //				});
-				
+
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
-						
+
 						new ArayuzSekreterListeleme().setVisible(true);
-						 
-							
+
 					}
 				});
-
 
 			}
 
@@ -305,9 +279,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 
 		btnSekreterListele.setBounds(340, 190, 125, 50);
 		frame.getContentPane().add(btnSekreterListele);
-		
-		
-		
+
 		JButton btnRandevuKayit = new JButton(" Randevu Kayit ");
 		btnRandevuKayit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -325,16 +297,13 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 					}
 				});
 
-
 			}
 
 		});
 
 		btnRandevuKayit.setBounds(50, 260, 125, 50);
 		frame.getContentPane().add(btnRandevuKayit);
-		
-		
-		
+
 //		JButton btnRandevuduzenleme = new JButton(" Randevu Duzenleme ");
 //		btnRandevuduzenleme.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent arg0) {
@@ -359,9 +328,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //
 //		btnRandevuduzenleme.setBounds(195, 260, 125, 50);
 //		frame2.getContentPane().add(btnRandevuduzenleme);
-		
-		
-		
+
 		JButton btnRandevuListele = new JButton(" Randevu Listele ");
 		btnRandevuListele.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -378,16 +345,14 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //						}
 //					}
 //				});
-				
+
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
-						
+
 						new ArayuzRandevuListeleme().setVisible(true);
-						 
-							
+
 					}
 				});
-
 
 			}
 
@@ -395,9 +360,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 
 		btnRandevuListele.setBounds(340, 260, 125, 50);
 		frame.getContentPane().add(btnRandevuListele);
-		
-		
-		
+
 		JButton btnHastahaneKayit = new JButton(" Hastahane Kayit ");
 		btnHastahaneKayit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -415,16 +378,13 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 					}
 				});
 
-
 			}
 
 		});
 
 		btnHastahaneKayit.setBounds(50, 330, 125, 50);
 		frame.getContentPane().add(btnHastahaneKayit);
-		
-		
-		
+
 //		JButton btnHastahaneDuzeneleme = new JButton(" Hastahane Duzenleme ");
 //		btnHastahaneDuzeneleme.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent arg0) {
@@ -449,9 +409,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //
 //		btnHastahaneDuzeneleme.setBounds(195, 330, 125, 50);
 //		frame2.getContentPane().add(btnHastahaneDuzeneleme);
-		
-		
-		
+
 		JButton btnHastahaneListele = new JButton(" Hastahane Listele ");
 		btnHastahaneListele.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -468,16 +426,14 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //						}
 //					}
 //				});
-				
+
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
-						
+
 						new ArayuzHastahaneListeleme().setVisible(true);
-						 
-							
+
 					}
 				});
-
 
 			}
 
@@ -485,9 +441,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 
 		btnHastahaneListele.setBounds(340, 330, 125, 50);
 		frame.getContentPane().add(btnHastahaneListele);
-		
-		
-		
+
 		JButton btnSehirKayit = new JButton(" Sehir Kayit ");
 		btnSehirKayit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -505,16 +459,13 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 					}
 				});
 
-
 			}
 
 		});
 
 		btnSehirKayit.setBounds(50, 400, 125, 50);
 		frame.getContentPane().add(btnSehirKayit);
-		
-		
-		
+
 //		JButton btnSehirDuzenleme = new JButton(" Sehir Duzenleme ");
 //		btnSehirDuzenleme.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent arg0) {
@@ -539,9 +490,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //
 //		btnSehirDuzenleme.setBounds(195, 400, 125, 50);
 //		frame2.getContentPane().add(btnSehirDuzenleme);
-		
-		
-		
+
 		JButton btnSehirListele = new JButton(" Sehir Listele ");
 		btnSehirListele.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -558,16 +507,14 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //						}
 //					}
 //				});
-				
+
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
-						
+
 						new ArayuzSehirListeleme().setVisible(true);
-						 
-							
+
 					}
 				});
-
 
 			}
 
@@ -575,9 +522,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 
 		btnSehirListele.setBounds(340, 400, 125, 50);
 		frame.getContentPane().add(btnSehirListele);
-		
-		
-		
+
 		JButton btnPoliklinikKayit = new JButton(" Poliklinik Kayit ");
 		btnPoliklinikKayit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -595,7 +540,6 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 					}
 				});
 
-
 			}
 
 		});
@@ -603,8 +547,6 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		btnPoliklinikKayit.setBounds(50, 470, 125, 50);
 		frame.getContentPane().add(btnPoliklinikKayit);
 
-		
-		
 //		JButton btnPoliklinikDuzenleme = new JButton(" Poliklinik Duzenleme ");
 //		btnPoliklinikDuzenleme.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent arg0) {
@@ -630,8 +572,6 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //		btnPoliklinikDuzenleme.setBounds(195, 470, 125, 50);
 //		frame2.getContentPane().add(btnPoliklinikDuzenleme);
 
-		
-		
 		JButton btnPoliklinikListele = new JButton(" Poliklinik Listele ");
 		btnPoliklinikListele.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -648,16 +588,14 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 //						}
 //					}
 //				});
-				
+
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
-						
+
 						new ArayuzPoliklinikListeleme().setVisible(true);
-						 
-							
+
 					}
 				});
-
 
 			}
 
@@ -665,9 +603,7 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 
 		btnPoliklinikListele.setBounds(340, 470, 125, 50);
 		frame.getContentPane().add(btnPoliklinikListele);
-		
-		
-		
+
 		JButton btnKapat = new JButton(" Kapat ");
 		btnKapat.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -685,9 +621,6 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 		pack();
 	}
 
-
-
-
 	public JFrame getFrame() {
 		return frame;
 	}
@@ -695,10 +628,5 @@ public class ArayuzAdmin extends javax.swing.JFrame{
 	public void setFrame(JFrame frame2) {
 		this.frame = frame2;
 	}
-
-
-
-
-
 
 }
