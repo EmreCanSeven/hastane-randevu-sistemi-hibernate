@@ -1,6 +1,5 @@
 package arayuz;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
@@ -10,28 +9,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
-import arayuz.util.ButtonEditorDoktor;
 import arayuz.util.ButtonEditorHastahane;
 import arayuz.util.ButtonRenderer;
-import impl.DoktorDaoImpl;
 import impl.HastahaneDaoImpl;
-import model.Doktor;
 import model.Hastahane;
 
 public class ArayuzHastahaneListeleme extends JFrame {
@@ -46,7 +35,7 @@ public class ArayuzHastahaneListeleme extends JFrame {
 		Object[][] result = new Object[hastahaneList.size()][5];
 
 		for (int i = 0; i < hastahaneList.size(); i++) {
-			Hastahane hastahane= hastahaneList.get(i);
+			Hastahane hastahane = hastahaneList.get(i);
 			result[i] = hastahaneyiArrayeCevir(hastahane);
 		}
 
@@ -59,7 +48,7 @@ public class ArayuzHastahaneListeleme extends JFrame {
 		objArr[0] = hastahane.getAdi();
 		objArr[1] = hastahane.getSehir().getAdi().toString();
 		objArr[2] = hastahane.getHastahaneTipi();
-		objArr[3] = hastahane.getId(); // Bunu seçildiðinde göndermek için almak zorundaydýk
+		objArr[3] = hastahane.getId(); // Bunu seï¿½ildiï¿½inde gï¿½ndermek iï¿½in almak zorundaydï¿½k
 
 		return objArr;
 	}
@@ -91,41 +80,40 @@ public class ArayuzHastahaneListeleme extends JFrame {
 
 		mainFrame.add(controlPanel);
 		mainFrame.add(panel);
-		
-		Object[] basliklar = new Object[] { "Adi", "Sehir", "Tipi", "Düzenle" };
 
-		HastahaneDaoImpl hastahaneDaoImpl= new HastahaneDaoImpl();
+		Object[] basliklar = new Object[] { "Adi", "Sehir", "Tipi", "Dï¿½zenle" };
+
+		HastahaneDaoImpl hastahaneDaoImpl = new HastahaneDaoImpl();
 		List<Hastahane> hastahaneListAll = hastahaneDaoImpl.findAll();
 
 		Object[][] hastahaneListesiMatris = new Object[hastahaneListAll.size()][5];
 		hastahaneListesiMatris = hastahaneListesindenMatrisOlustur(hastahaneListAll);
 
 		JTable table = new JTable(hastahaneListesiMatris, basliklar);
-		table.getColumn("Düzenle").setCellRenderer(new ButtonRenderer());
-		table.getColumn("Düzenle").setCellEditor(new ButtonEditorHastahane(new JCheckBox(), mainFrame));
+		table.getColumn("Dï¿½zenle").setCellRenderer(new ButtonRenderer());
+		table.getColumn("Dï¿½zenle").setCellEditor(new ButtonEditorHastahane(new JCheckBox(), mainFrame));
 
 		final JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setVisible(false);
 		controlPanel.add(scrollPane);
 		mainFrame.setVisible(true);
-		
-		
+
 		JButton button = new JButton("Listele");
 		button.setBounds(x, 350, 100, 20);
-		
+
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
-							scrollPane.setVisible(true);
-							refreshEkran();
+						scrollPane.setVisible(true);
+						refreshEkran();
 					}
 				});
 			}
 		});
-		
+
 		panel.add(button);
-		
+
 	}
 
 	private void refreshEkran() {
@@ -141,7 +129,5 @@ public class ArayuzHastahaneListeleme extends JFrame {
 	public void setMainFrame(JFrame mainFrame) {
 		this.mainFrame = mainFrame;
 	}
-
-
 
 }

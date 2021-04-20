@@ -18,19 +18,17 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import arayuz.util.ButtonEditorDoktor;
 import arayuz.util.ButtonEditorHasta;
 import arayuz.util.ButtonRenderer;
 import impl.HastaDaoImpl;
 import model.Hasta;
 
-public class ArayuzHastaListeleme extends javax.swing.JFrame{
+public class ArayuzHastaListeleme extends javax.swing.JFrame {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	
+
 	private JFrame mainFrame;
 	private JPanel controlPanel;
 
@@ -52,7 +50,7 @@ public class ArayuzHastaListeleme extends javax.swing.JFrame{
 		objArr[1] = hasta.getAdi();
 		objArr[2] = hasta.getSoyadi();
 		objArr[3] = hasta.getDogumYeri();
-		objArr[4] = hasta.getId(); // Bunu seçildiðinde göndermek için almak zorundaydýk
+		objArr[4] = hasta.getId(); // Bunu seï¿½ildiï¿½inde gï¿½ndermek iï¿½in almak zorundaydï¿½k
 
 		return objArr;
 	}
@@ -84,8 +82,8 @@ public class ArayuzHastaListeleme extends javax.swing.JFrame{
 
 		mainFrame.add(controlPanel);
 		mainFrame.add(panel);
-		
-		Object[] basliklar = new Object[] { "TCKN", "Adi", "Soyadi", "Doðum Yeri", "Düzenle" };
+
+		Object[] basliklar = new Object[] { "TCKN", "Adi", "Soyadi", "Doï¿½um Yeri", "Dï¿½zenle" };
 
 		HastaDaoImpl hastaDaoImpl = new HastaDaoImpl();
 		List<Hasta> hastaListAll = hastaDaoImpl.findAll();
@@ -94,31 +92,30 @@ public class ArayuzHastaListeleme extends javax.swing.JFrame{
 		hastaListesiMatris = hastaListesindenMatrisOlustur(hastaListAll);
 
 		JTable table = new JTable(hastaListesiMatris, basliklar);
-		table.getColumn("Düzenle").setCellRenderer(new ButtonRenderer());
-		table.getColumn("Düzenle").setCellEditor(new ButtonEditorHasta(new JCheckBox(), mainFrame));
+		table.getColumn("Dï¿½zenle").setCellRenderer(new ButtonRenderer());
+		table.getColumn("Dï¿½zenle").setCellEditor(new ButtonEditorHasta(new JCheckBox(), mainFrame));
 
 		final JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setVisible(false);
 		controlPanel.add(scrollPane);
 		mainFrame.setVisible(true);
-		
-		
+
 		JButton button = new JButton("Listele");
 		button.setBounds(x, 350, 100, 20);
-		
+
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
-							scrollPane.setVisible(true);
-							refreshEkran();
-						}
+						scrollPane.setVisible(true);
+						refreshEkran();
+					}
 				});
 			}
 		});
-		
+
 		panel.add(button);
-		
+
 	}
 
 	private void refreshEkran() {
@@ -134,10 +131,5 @@ public class ArayuzHastaListeleme extends javax.swing.JFrame{
 	public void setMainFrame(JFrame mainFrame) {
 		this.mainFrame = mainFrame;
 	}
-	
-	
-	
+
 }
-
-
-

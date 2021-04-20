@@ -17,18 +17,14 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import enums.Cinsiyet;
-import impl.DoktorDaoImpl;
 import impl.HastaDaoImpl;
-import model.Doktor;
 import model.Hasta;
 
-public class ArayuzHastaKayit extends javax.swing.JFrame{
-
+public class ArayuzHastaKayit extends javax.swing.JFrame {
 
 	private JTextField txtTCKimlikNo;
 	private JTextField txtAdi;
 	private JTextField txtSoyadi;
-	private JTextField txtCinsiyeti;
 	private JTextField txtDogumYeri;
 	private JTextField txtDogumTarihi;
 	private JTextField txtBabaAdi;
@@ -37,7 +33,6 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 
 	private JFrame frame6;
 
-
 	public ArayuzHastaKayit() {
 		initialize();
 
@@ -45,7 +40,7 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 
 	public void initialize() {
 
-		Toolkit toolkit = Toolkit.getDefaultToolkit();  
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = toolkit.getScreenSize();
 
 		frame6 = new JFrame();
@@ -54,8 +49,8 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 		frame6.setTitle("Hasta Kayit Sayfasi");
 		frame6.getContentPane().setLayout(null);
 
-		int x =(screenSize.width - frame6.getWidth()) / 2;
-		int y =(screenSize.height - frame6.getHeight()) / 2;
+		int x = (screenSize.width - frame6.getWidth()) / 2;
+		int y = (screenSize.height - frame6.getHeight()) / 2;
 
 		frame6.setLocation(x, y);
 
@@ -73,7 +68,7 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 		lblAdi.setBounds(10, 60, 107, 36);
 		frame6.getContentPane().add(lblAdi);
 
-		txtAdi= new JTextField();
+		txtAdi = new JTextField();
 		txtAdi.setBounds(130, 65, 175, 24);
 		txtAdi.setBackground(Color.WHITE);
 		frame6.getContentPane().add(txtAdi);
@@ -89,19 +84,17 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 		frame6.getContentPane().add(txtSoyadi);
 		txtSoyadi.setColumns(10);
 
-
 		JLabel lblCinsiyeti = new JLabel("Cinsiyeti: ");
 		lblCinsiyeti.setBounds(10, 160, 107, 36);
 		frame6.getContentPane().add(lblCinsiyeti);
 
-		final JComboBox<Cinsiyet> cb=new JComboBox<Cinsiyet>();
-	    cb.setModel(new DefaultComboBoxModel<Cinsiyet>(Cinsiyet.values()));    
+		final JComboBox<Cinsiyet> cb = new JComboBox<Cinsiyet>();
+		cb.setModel(new DefaultComboBoxModel<Cinsiyet>(Cinsiyet.values()));
 
-		cb.setBounds(130, 167,90,20);    
-		frame6.add(cb);        
-		frame6.setLayout(null);    
+		cb.setBounds(130, 167, 90, 20);
+		frame6.add(cb);
+		frame6.setLayout(null);
 		frame6.setVisible(true);
-
 
 		JLabel lblDogumYeri = new JLabel("Dogum Yeri: ");
 		lblDogumYeri.setBounds(10, 210, 107, 36);
@@ -113,7 +106,6 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 		frame6.getContentPane().add(txtDogumYeri);
 		txtDogumYeri.setColumns(10);
 
-
 		JLabel lblDogumTarihi = new JLabel("Dogum Tarihi: ");
 		lblDogumTarihi.setBounds(10, 260, 107, 36);
 		frame6.getContentPane().add(lblDogumTarihi);
@@ -123,7 +115,6 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 		txtDogumTarihi.setBackground(Color.WHITE);
 		frame6.getContentPane().add(txtDogumTarihi);
 		txtDogumTarihi.setColumns(10);
-
 
 		JLabel lblBabaAdi = new JLabel("Baba Adi: ");
 		lblBabaAdi.setBounds(10, 310, 107, 36);
@@ -135,7 +126,6 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 		frame6.getContentPane().add(txtBabaAdi);
 		txtBabaAdi.setColumns(10);
 
-
 		JLabel lblAnneAdi = new JLabel("Anne Adi: ");
 		lblAnneAdi.setBounds(10, 360, 107, 36);
 		frame6.getContentPane().add(lblAnneAdi);
@@ -145,7 +135,6 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 		txtAnneAdi.setBackground(Color.WHITE);
 		frame6.getContentPane().add(txtAnneAdi);
 		txtAnneAdi.setColumns(10);
-
 
 		JLabel lblCeptelefonu = new JLabel("Cep Telefonu: ");
 		lblCeptelefonu.setBounds(10, 410, 107, 36);
@@ -160,20 +149,20 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 		JButton btnKaydet = new JButton(" Kaydet ");
 		btnKaydet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 				HastaDaoImpl hastaDaoImpl = new HastaDaoImpl();
 				Hasta hasta = new Hasta();
-				
+
 				hasta.setAdi(txtAdi.getText());
 				hasta.setSoyadi(txtSoyadi.getText());
 				hasta.setAnneAdi(txtAnneAdi.getText());
 				hasta.setBabaAdi(txtBabaAdi.getText());
 				hasta.setCepTel(txtCepTelefonu.getText());
 //				hasta.setDogumTarihi(txtDogumTarihi.);
-				
+
 				Cinsiyet cinsiyet = (Cinsiyet) cb.getSelectedItem();
 				hasta.setCinsiyet(cinsiyet);
-				
+
 				Date date = null;
 				try {
 					date = new SimpleDateFormat("dd/MM/yyyy").parse(txtDogumTarihi.getText());
@@ -182,23 +171,21 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 					e.printStackTrace();
 				}
 				hasta.setDogumTarihi(date);
-				
-				SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+
 				Date dateCreate = new Date(System.currentTimeMillis());
 				hasta.setCreatedAt(dateCreate);
-				
+
 				hasta.setDogumYeri(txtDogumYeri.getText());
 				hasta.setTckn(txtTCKimlikNo.getText());
-				
+
 				hastaDaoImpl.save(hasta);
-				
+
 			}
 
 		});
 
 		btnKaydet.setBounds(10, 470, 175, 75);
 		frame6.getContentPane().add(btnKaydet);
-
 
 		JButton bynKapat = new JButton(" Kapat ");
 		bynKapat.addActionListener(new ActionListener() {
@@ -213,12 +200,10 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 		bynKapat.setBounds(195, 470, 110, 75);
 		frame6.getContentPane().add(bynKapat);
 
-
 		frame6.setVisible(true);
 		pack();
 
 	}
-
 
 	public JFrame getFrame() {
 		return frame6;
@@ -227,6 +212,5 @@ public class ArayuzHastaKayit extends javax.swing.JFrame{
 	public void setFrame(JFrame frame6) {
 		this.frame6 = frame6;
 	}
-
 
 }

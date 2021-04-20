@@ -18,28 +18,25 @@ import enums.HastahaneTipi;
 import impl.HastahaneDaoImpl;
 import impl.SehirDaoImpl;
 import model.Hastahane;
-import model.Poliklinik;
 import model.Sehir;
 
-public class ArayuzHastahaneKayit extends javax.swing.JFrame{
+public class ArayuzHastahaneKayit extends javax.swing.JFrame {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private JTextField txtAdi;
-	private JTextField txtPolikinlik;
 	private JFrame frame15;
-	
 
 	public ArayuzHastahaneKayit() {
 		initialize();
 
 	}
-	
+
 	private void initialize() {
 //		
-		Toolkit toolkit = Toolkit.getDefaultToolkit();  
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = toolkit.getScreenSize();
 
 		frame15 = new JFrame();
@@ -48,34 +45,33 @@ public class ArayuzHastahaneKayit extends javax.swing.JFrame{
 		frame15.setTitle("Hastahane Kayit Sayfasi");
 		frame15.getContentPane().setLayout(null);
 
-		int x =(screenSize.width - frame15.getWidth()) / 2;
-		int y =(screenSize.height - frame15.getHeight()) / 2;
+		int x = (screenSize.width - frame15.getWidth()) / 2;
+		int y = (screenSize.height - frame15.getHeight()) / 2;
 
 		frame15.setLocation(x, y);
-		
+
 		JLabel lblAdi = new JLabel("Adi : ");
 		lblAdi.setBounds(10, 20, 107, 36);
 		frame15.getContentPane().add(lblAdi);
 
-		txtAdi= new JTextField();
+		txtAdi = new JTextField();
 		txtAdi.setBounds(130, 30, 175, 24);
 		txtAdi.setBackground(Color.WHITE);
 		frame15.getContentPane().add(txtAdi);
 		txtAdi.setColumns(10);
-		
-	    
+
 		JLabel lblSehir = new JLabel("Sehir : ");
 		lblSehir.setBounds(10, 60, 107, 36);
 		frame15.getContentPane().add(lblSehir);
 
 		SehirDaoImpl sehirDaoImpl = new SehirDaoImpl();
 		List<Sehir> geriDonenSehirList = sehirDaoImpl.findAll();
-		
+
 		String[] sehirArray = new String[geriDonenSehirList.size()];
 
-		int i=0;
+		int i = 0;
 
-		for(Sehir sehir: geriDonenSehirList) {
+		for (Sehir sehir : geriDonenSehirList) {
 
 			String sehirAdi = sehir.getAdi();
 			sehirArray[i] = sehirAdi;
@@ -83,75 +79,40 @@ public class ArayuzHastahaneKayit extends javax.swing.JFrame{
 
 		}
 
-		final JComboBox comboBoxSehir=new JComboBox(sehirArray);    
-	    
-		comboBoxSehir.setBounds(130, 65,90,20);    
-	    frame15.add(comboBoxSehir);
-		
-		
+		final JComboBox comboBoxSehir = new JComboBox(sehirArray);
+
+		comboBoxSehir.setBounds(130, 65, 90, 20);
+		frame15.add(comboBoxSehir);
+
 		JLabel lblHastahaneTipi = new JLabel("Hastahane Tipi : ");
 		lblHastahaneTipi.setBounds(10, 104, 107, 36);
 		frame15.getContentPane().add(lblHastahaneTipi);
-		
-		 final JComboBox<HastahaneTipi> cb=new JComboBox<HastahaneTipi>();
-		 cb.setModel(new DefaultComboBoxModel<HastahaneTipi>(HastahaneTipi.values()));
-	    
-	     cb.setBounds(130, 110,90,20);    
-	     frame15.add(cb);        
-	     frame15.setLayout(null);    
-	     frame15.setVisible(true);
-		
-		
-		
-//		JLabel lblPoliklinik = new JLabel("Poliklinik: ");
-//		lblPoliklinik.setBounds(10, 140, 107, 36);
-//		frame15.getContentPane().add(lblPoliklinik);
-//		
-//		PoliklinikDaoImpl poliklinikDaoImpl = new PoliklinikDaoImpl();
-//		List<Poliklinik> geriDonenPoliList = poliklinikDaoImpl.findAll();
-//		
-//		String[] poliArray = new String[geriDonenPoliList.size()];
-//
-//		int i=0;
-//
-//		for(Poliklinik poliklinik : geriDonenPoliList) {
-//
-//			String poliAdi = poliklinik.getAdi();
-//			poliArray[i] = poliAdi;
-//			i++;
-//
-//		}
-//		final JComboBox comboBoxPoli=new JComboBox(poliArray);  
-//	    
-//		comboBoxPoli.setBounds(130, 147,90,20);    
-//	    frame15.add(comboBoxPoli);        
-//	    frame15.setLayout(null);    
-//	    frame15.setVisible(true);
-	    
-	    
-	    
-	    JButton btnKaydet = new JButton(" Kaydet ");
+
+		final JComboBox<HastahaneTipi> cb = new JComboBox<HastahaneTipi>();
+		cb.setModel(new DefaultComboBoxModel<HastahaneTipi>(HastahaneTipi.values()));
+
+		cb.setBounds(130, 110, 90, 20);
+		frame15.add(cb);
+		frame15.setLayout(null);
+		frame15.setVisible(true);
+
+		JButton btnKaydet = new JButton(" Kaydet ");
 		btnKaydet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
 				HastahaneDaoImpl hastahaneDaoImpl = new HastahaneDaoImpl();
 				Hastahane hastahane = new Hastahane();
-				
+
 				hastahane.setAdi(txtAdi.getText());
-				
+
 				SehirDaoImpl sehirDaoImpl = new SehirDaoImpl();
 				String secilenSehir = (String) comboBoxSehir.getSelectedItem();
 				Sehir geriDonenSehir = sehirDaoImpl.findByAdi(secilenSehir);
 				hastahane.setSehir(geriDonenSehir);
-				
+
 				HastahaneTipi hastahaneTipi = (HastahaneTipi) cb.getSelectedItem();
 				hastahane.setHastahaneTipi(hastahaneTipi);
-				
-//				String secilenPoliklinikAdi = (String) comboBoxPoli.getSelectedItem();
-//				PoliklinikDaoImpl poliklinikDaoImpl = new PoliklinikDaoImpl();
-//				Poliklinik geriDonenPoliklinik = poliklinikDaoImpl.findByAdi(secilenPoliklinikAdi);
-//				hastahane.setPoliklinik(geriDonenPoliklinik);
-				
+
 				hastahaneDaoImpl.save(hastahane);
 
 			}
@@ -160,31 +121,18 @@ public class ArayuzHastahaneKayit extends javax.swing.JFrame{
 
 		btnKaydet.setBounds(10, 195, 175, 75);
 		frame15.getContentPane().add(btnKaydet);
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    frame15.setVisible(true);
-	  		pack();
-	  		
-	  	}
-	
-	    
-	    public JFrame getFrame() {
-			return frame15;
-		}
 
-		public void setFrame(JFrame frame9) {
-			this.frame15 = frame9;
-		}
+		frame15.setVisible(true);
+		pack();
 
-
-
-	
 	}
+
+	public JFrame getFrame() {
+		return frame15;
+	}
+
+	public void setFrame(JFrame frame9) {
+		this.frame15 = frame9;
+	}
+
+}
