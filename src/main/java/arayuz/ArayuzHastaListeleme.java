@@ -50,7 +50,7 @@ public class ArayuzHastaListeleme extends javax.swing.JFrame {
 		objArr[1] = hasta.getAdi();
 		objArr[2] = hasta.getSoyadi();
 		objArr[3] = hasta.getDogumYeri();
-		objArr[4] = hasta.getId(); // Bunu se�ildi�inde g�ndermek i�in almak zorundayd�k
+		objArr[4] = hasta.getId(); // 
 
 		return objArr;
 	}

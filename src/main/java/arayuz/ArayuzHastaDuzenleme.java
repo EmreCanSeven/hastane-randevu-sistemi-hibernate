@@ -183,7 +183,7 @@ public class ArayuzHastaDuzenleme extends javax.swing.JFrame {
 
 				hastaDaoImpl.update(guncellenecekHasta);
 
-				JOptionPane.showMessageDialog(btnGuncelle, "Bilgiler ba�ar�l� bir �ekilde g�ncellendi");
+				JOptionPane.showMessageDialog(btnGuncelle, "Bilgiler basarili bir sekilde guncellendi");
 
 			}
 
